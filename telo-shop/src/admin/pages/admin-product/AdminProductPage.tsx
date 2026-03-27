@@ -20,7 +20,7 @@ export const AdminProductPage = () => {
   const subTitle = id==="new"? "Aqui puedes crear un nuevo producto": "Aqui puedes editar el producto";
 
 
-  const handleSubmit =async(data:Partial<Product>) =>{
+  const handleSubmit =async(data:Partial<Product> &{files?:File[]}) =>{
     await mutation.mutateAsync(data,{
       onSuccess:(data)=>{
         toast.success("Producto actualizado correctamente",{
